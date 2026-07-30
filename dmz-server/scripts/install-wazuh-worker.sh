@@ -6,9 +6,9 @@
 # Ce script installe Wazuh Manager en mode Worker sur la VM DMZ.
 # Le Worker collecte les logs des agents OT et les transmet au Manager SOC.
 #
-# VM DMZ       : 192.168.35.20
+# VM DMZ       : 192.168.35.10
 # Wazuh Manager: 192.168.40.10
-# Dashboard    : http://192.168.40.11  (login: admin / admin)
+# Dashboard    : http://192.168.40.10  (login: admin / admin)
 # =============================================================================
 
 set -e
@@ -43,9 +43,9 @@ echo ""
 echo "=============================================="
 echo "Wazuh Worker installe avec succes !"
 echo ""
-echo "  VM DMZ        : 192.168.35.20"
+echo "  VM DMZ        : 192.168.35.10"
 echo "  Wazuh Manager : 192.168.40.10"
-echo "  Dashboard     : http://192.168.40.11"
+echo "  Dashboard     : http://192.168.40.10"
 echo "  Login         : admin"
 echo "  Password      : admin"
 echo "=============================================="

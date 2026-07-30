@@ -7,8 +7,8 @@
 # Guacamole sert de Jump Server — point d acces unique vers les VMs OT
 # via RDP et SSH depuis le navigateur web.
 #
-# VM DMZ      : 192.168.35.20
-# URL         : http://192.168.35.20:8080/guacamole
+# VM DMZ      : 192.168.35.10
+# URL         : http://192.168.35.10:8080/guacamole
 # Login       : guacadmin
 # Password    : guacadmin  
 #
@@ -52,7 +52,7 @@ echo ""
 echo "=============================================="
 echo " Guacamole installe avec succes !"
 echo ""
-echo "  URL      : http://192.168.35.20:8080/guacamole"
+echo "  URL      : http://192.168.35.10:8080/guacamole"
 echo "  Login    : guacadmin"
 echo "  Password : guacadmin"
 echo "=============================================="

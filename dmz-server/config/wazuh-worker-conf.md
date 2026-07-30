@@ -1,4 +1,4 @@
-# Wazuh Worker Configuration — DMZ Zone (192.168.35.20)
+# Wazuh Worker Configuration — DMZ Zone (192.168.35.10)
 
 ## Prerequisites
 - Wazuh Manager installed : `sudo apt install wazuh-manager -y`
@@ -18,9 +18,9 @@ Find the `<cluster>` section and replace it with :
 ```xml
 <cluster>
   <name>soc-industriel</name>
-  <node_name>worker-dmz</node_name>
+  <node_name>worker-node</node_name>
   <node_type>worker</node_type>
-  <key>YOUR_KEY_HERE</key>         <!-- same key as the Manager -->
+  <key>160ab01830e3575700349b60220a5f6e</key>         <!-- same key as the Manager -->
   <port>1516</port>
   <bind_addr>0.0.0.0</bind_addr>
   <nodes>
@@ -67,6 +67,6 @@ sudo /var/ossec/bin/cluster_control -l
 Expected output :
 ```
 NAME          TYPE    VERSION  ADDRESS
-master-node   master  4.x.x    192.168.40.10
-worker-dmz    worker  4.x.x    192.168.35.20
+master-node   master  4.14.5    192.168.40.10
+worker-dmz    worker  4.14.5    192.168.35.10
 ```

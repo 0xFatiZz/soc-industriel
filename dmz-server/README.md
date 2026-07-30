@@ -1,6 +1,6 @@
 # DMZ Server — Industrial SOC | Purdue Model
 
-> **Zone:** DMZ (Level 3.5) — 192.168.35.20  
+> **Zone:** DMZ (Level 3.5) — 192.168.35.10  
 > **Role:** Wazuh Worker + Guacamole Jump Server  
 > **Network:** dmz-net (VirtualBox Internal Network)
 
