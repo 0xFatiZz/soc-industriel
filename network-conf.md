@@ -32,26 +32,26 @@ Segmentation between the Purdue levels is provided by a single **pfSense 2.4.5-R
 ### Adapter 1 — control-net (Level 0/1)
 Internal Network `control-net`, used by the process/field level (OpenPLC, Factory I/O).
 
-![pfSense Adapter 1 settings](soc-industriel\net-conf\pfsense-adapter1.png) 
+![pfSense Adapter 1 settings](net-conf/pfsense-adapter1.png) 
 
 *Figure 1.2 — pfSense: Adapter 1 (control-net)*
 
 ### Adapter 2 — scada-net (Level 2)
 Internal Network `scada-net`, used by the supervisory control level (ScadaBR).
 
-![pfSense Adapter 2 settings](net-conf\pfsense-adapter2.png)
+![pfSense Adapter 2 settings](net-conf/pfsense-adapter2.png)
 *Figure 1.3 — pfSense: Adapter 2 (scada-net)*
 
 ### Adapter 3 — ops-net (Level 3)
 Internal Network `ops-net`, used by the operations/engineering level (engineering workstation).
 
-![pfSense Adapter 3 settings](net-conf\pfsense-adapter3.png)
+![pfSense Adapter 3 settings](net-conf/pfsense-adapter3.png)
 *Figure 1.4 — pfSense: Adapter 3 (ops-net)*
 
 ### Adapter 4 — dmz-net (Level 3.5)
 Internal Network `dmz-net`, used by the industrial DMZ (Guacamole + Wazuh Worker).
 
-![pfSense Adapter 4 settings](net-conf\pfsense-adapter4.png)
+![pfSense Adapter 4 settings](net-conf/pfsense-adapter4.png)
 *Figure 1.5 — pfSense: Adapter 4 (dmz-net)*
 
 ### Adapter 5 — soc-net (Level 4/5)
@@ -65,7 +65,7 @@ C:\Program Files\Oracle\VirtualBox>VBoxManage modifyvm "pfSense" --nic5 intnet -
 
 This attaches NIC 5 of the pfSense VM to the internal network `soc-net`, mirroring the same configuration pattern used for Adapters 1–4, but applied through the VirtualBox command-line interface instead of the settings window.
 
-![pfSense Adapter 5 (soc-net) VBoxManage command](net-conf\pfsense-adapter5.png)
+![pfSense Adapter 5 (soc-net) VBoxManage command](net-conf/pfsense-adapter5.png)
 *Figure — pfSense: Adapter 5 (soc-net), configured via VBoxManage*
 
 ### Adapter 6 — WAN (NAT)
@@ -85,10 +85,10 @@ This reattaches NIC 6 of the pfSense VM to NAT, confirmed afterwards by the `sho
 ### Interface overview
 The full interface list, confirmed via `VBoxManage showvminfo`, and the IP assignment shown on the pfSense console at boot:
 
-![VBoxManage showvminfo NIC list](net-conf\pfsense.png)
+![VBoxManage showvminfo NIC list](net-conf/pfsense.png)
 *Figure 1.6 — pfSense network interface list (VBoxManage showvminfo) — NIC 6 attached via NAT*
 
-![pfSense console interface assignment](images/net-conf\pfsense-ip.png)
+![pfSense console interface assignment](net-conf/pfsense-ip.png)
 *Figure 1.7 — pfSense console: interface and IP assignment*
 
 **Table 1.2 — pfSense interface configuration**
