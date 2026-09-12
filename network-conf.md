@@ -32,7 +32,7 @@ Segmentation between the Purdue levels is provided by a single **pfSense 2.4.5-R
 ### Adapter 1 — control-net (Level 0/1)
 Internal Network `control-net`, used by the process/field level (OpenPLC, Factory I/O).
 
-![pfSense Adapter 1 settings](net-conf\pfsense-adapter1.png) 
+![pfSense Adapter 1 settings](soc-industriel\net-conf\pfsense-adapter1.png) 
 
 *Figure 1.2 — pfSense: Adapter 1 (control-net)*
 
