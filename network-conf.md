@@ -112,13 +112,13 @@ Each host has a static IP on its Purdue-level segment, with the pfSense interfac
 
 The `plc_2` virtual machine, hosting the **OpenPLC** soft-PLC, has two network interfaces: the first attached to `control-net` for its place in the Purdue architecture, the second in **Host-Only** mode to allow direct access from the host machine.
 
-![plc_2 Adapter 1 (control-net)](images/figure-1.8-plc2-adapter1.png)
+![plc_2 Adapter 1 (control-net)](net-conf/plc-adapter1.png)
 *Figure 1.8 — plc_2: Adapter 1 (control-net)*
 
-![plc_2 Adapter 2 (Host-Only)](images/figure-1.9-plc2-adapter2.png)
+![plc_2 Adapter 2 (Host-Only)](net-conf/plc-adapter2.png)
 *Figure 1.9 — plc_2: Adapter 2 (Host-Only Ethernet Adapter)*
 
-![plc_2 /etc/network/interfaces](images/figure-1.10-plc2-interfaces-file.png)
+![plc_2 /etc/network/interfaces](net-conf/plc-ip2.png)
 *Figure 1.10 — plc_2: `/etc/network/interfaces` file*
 
 **Table 1.3 — IP addressing: plc_2 (OpenPLC)**
@@ -130,10 +130,10 @@ The `plc_2` virtual machine, hosting the **OpenPLC** soft-PLC, has two network i
 
 ### Level 2 — Supervisory Control Network (ScadaBR)
 
-![ScadaBR Adapter 1 (scada-net)](images/figure-1.11-scadabr-adapter1.png)
+![ScadaBR Adapter 1 (scada-net)](net-conf/scada-adapter.png)
 *Figure 1.11 — ScadaBR: Adapter 1 (scada-net)*
 
-![ScadaBR /etc/network/interfaces](images/figure-1.12-scadabr-interfaces-file.png)
+![ScadaBR /etc/network/interfaces](net-conf/scada-ip.png)
 *Figure 1.12 — ScadaBR: `/etc/network/interfaces` file*
 
 **Table 1.4 — IP addressing: ScadaBR**
@@ -144,10 +144,10 @@ The `plc_2` virtual machine, hosting the **OpenPLC** soft-PLC, has two network i
 
 ### Level 3 — Operations / Engineering Network (Engineering workstation)
 
-![workstation Adapter 1 (ops-net)](images/figure-1.13-workstation-adapter1.png)
+![workstation Adapter 1 (ops-net)](net-conf/ews-adapter.png)
 *Figure 1.13 — workstation: Adapter 1 (ops-net)*
 
-![workstation /etc/network/interfaces](images/figure-1.14-workstation-interfaces-file.png)
+![workstation /etc/network/interfaces](net-conf/ews-ip.png)
 *Figure 1.14 — workstation: `/etc/network/interfaces` file*
 
 **Table 1.5 — IP addressing: Engineering workstation**
@@ -158,10 +158,10 @@ The `plc_2` virtual machine, hosting the **OpenPLC** soft-PLC, has two network i
 
 ### Level 3.5 — Industrial DMZ (Guacamole + Wazuh Worker)
 
-![Dmz Server Adapter 1 (dmz-net)](images/figure-1.15-dmzserver-adapter1.png)
+![Dmz Server Adapter 1 (dmz-net)](net-conf/dmz-adapter.png)
 *Figure 1.15 — Dmz Server: Adapter 1 (dmz-net)*
 
-![Dmz Server netplan config](images/figure-1.16-dmzserver-netplan.png)
+![Dmz Server netplan config](net-conf/dmz-ip.png)
 *Figure 1.16 — Dmz Server: `/etc/netplan/00-installer-config.yaml` file*
 
 **Table 1.6 — IP addressing: Dmz Server (Guacamole + Wazuh Worker)**
@@ -172,10 +172,10 @@ The `plc_2` virtual machine, hosting the **OpenPLC** soft-PLC, has two network i
 
 ### Level 4/5 — Enterprise Network (Wazuh Manager)
 
-![Wazuh Manager Adapter 1 (soc-net)](images/figure-1.17-wazuh-adapter1.png)
+![Wazuh Manager Adapter 1 (soc-net)](net-conf/wazuh-adapter.png)
 *Figure 1.17 — Wazuh v4.14.5 OVA: Adapter 1 (soc-net)*
 
-![Wazuh Manager network script](images/figure-1.18-wazuh-ifcfg-eth0.png)
+![Wazuh Manager network script](net-conf/wazuh-ip.png)
 *Figure 1.18 — Wazuh Manager: `/etc/sysconfig/network-scripts/ifcfg-eth0` file*
 
 **Table 1.7 — IP addressing: Wazuh Manager**
@@ -190,13 +190,13 @@ The `plc_2` virtual machine, hosting the **OpenPLC** soft-PLC, has two network i
 
 In addition to the Purdue segmentation, a **Host-Only** network was configured under VirtualBox to allow direct access from the host machine to certain virtual machines (notably the `plc_2` PLC), without going through the full pfSense firewall chain. This link is what lets **Factory I/O**, which runs on the host machine, communicate over Modbus TCP with **OpenPLC** running inside `plc_2` — since Factory I/O is not itself a VM on the Purdue network, it needs this direct Host-Only path to reach the PLC.
 
-![VirtualBox Host-Only Network manager](images/figure-1.19-vbox-hostonly-manager.png)
+![VirtualBox Host-Only Network manager](net-conf/hostonly.png)
 *Figure 1.19 — VirtualBox network manager: Host-Only Network*
 
-![Host-Only adapter IP configuration on the host](images/figure-1.20-hostonly-ip-config.png)
+![Host-Only adapter IP configuration on the host](net-conf/hostonlyip.png)
 *Figure 1.20 — Host-Only adapter IP configuration on the host machine*
 
-![plc_2 Host-Only interface detail](images/figure-1.21-plc2-hostonly-detail.png)
+![plc_2 Host-Only interface detail](net-conf/plc-ip2.png)
 *Figure 1.21 — plc_2: Host-Only interface detail (Adapter 2)*
 
 **Table 1.8 — Host-Only network configuration**
