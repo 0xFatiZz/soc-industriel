@@ -31,7 +31,6 @@ network:
         addresses: [8.8.8.8]
 ```
 
-> ⚠️ Replace `enp0s3` with your interface name if different (check with `ip link show`)
 
 ---
 
