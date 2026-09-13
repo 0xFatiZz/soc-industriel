@@ -22,7 +22,7 @@ The Guacamole administration interface is reachable at:
 http://192.168.35.10:8080/guacamole/
 ```
 
-![Apache Guacamole login page](DMZ Server\Guacamole\Screenshots\login.png)
+![Apache Guacamole login page](DMZ Server/Guacamole/Screenshots/login.png)
 *Figure 1 — Apache Guacamole login page*
 
 After authenticating with the administrator account (`guacadmin`), the user lands on the main dashboard, initially empty until connections are configured.
