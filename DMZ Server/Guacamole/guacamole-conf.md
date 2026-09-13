@@ -29,6 +29,7 @@ http://192.168.35.10:8080/guacamole/
 After authenticating with the administrator account (`guacadmin`), the user lands on the main dashboard, initially empty until connections are configured.
 
 ![Guacamole dashboard with no connections configured](Screenshots/1.png)
+
 *Figure 2 — Guacamole dashboard: no connection configured yet*
 
 ---
@@ -42,9 +43,11 @@ Each connection is configured with a name/location/protocol, then network and au
 ### OpenPLC-SSH connection
 
 ![Guacamole edit connection — OpenPLC-SSH](Screenshots/2.png)
+
 *Figure 3 — Guacamole: editing the OpenPLC-SSH connection*
 
 ![Guacamole network and authentication parameters — OpenPLC-SSH](Screenshots/3.png)
+
 *Figure 4 — Guacamole: network and authentication parameters for OpenPLC-SSH*
 
 **Table 1 — Connection parameters: OpenPLC-SSH**
@@ -62,9 +65,11 @@ Each connection is configured with a name/location/protocol, then network and au
 ### ScadaBr-SSH connection
 
 ![Guacamole edit connection — ScadaBr-SSH](Screenshots/4.png)
+
 *Figure 5 — Guacamole: editing the ScadaBr-SSH connection*
 
 ![Guacamole network and authentication parameters — ScadaBr-SSH](Screenshots/5.png)
+
 *Figure 6 — Guacamole: network and authentication parameters for ScadaBr-SSH*
 
 **Table 2 — Connection parameters: ScadaBr-SSH**
@@ -82,9 +87,11 @@ Each connection is configured with a name/location/protocol, then network and au
 ### EWS-SSH connection
 
 ![Guacamole edit connection — EWS-SSH](Screenshots/6.png)
+
 *Figure 7 — Guacamole: editing the EWS-SSH connection*
 
 ![Guacamole network and authentication parameters — EWS-SSH](Screenshots/7.png)
+
 *Figure 8 — Guacamole: network and authentication parameters for EWS-SSH*
 
 **Table 3 — Connection parameters: EWS-SSH**
@@ -102,6 +109,7 @@ Each connection is configured with a name/location/protocol, then network and au
 ### Connections summary
 
 ![List of configured Guacamole connections](Screenshots/8.png)
+
 *Figure 9 — List of connections configured in Guacamole*
 
 **Table 4 — Guacamole connections summary**
@@ -119,6 +127,7 @@ Each connection is configured with a name/location/protocol, then network and au
 To let the Guacamole server initiate SSH connections toward the lower-level equipment, dedicated filtering rules were added on the **DMZ** interface of the pfSense firewall. These rules apply the **principle of least privilege**: only SSH traffic (port 22) explicitly originating from the Guacamole server's address (`192.168.35.10`) toward the target hosts is allowed; every other flow is implicitly blocked.
 
 ![pfSense firewall rules on the DMZ interface](Screenshots/10.png)
+
 *Figure 10 — pfSense: firewall rules on the DMZ interface*
 
 **Table 5 — Firewall rules: DMZ interface**
@@ -136,6 +145,7 @@ To let the Guacamole server initiate SSH connections toward the lower-level equi
 A browser-based connection test validated that the Guacamole gateway works correctly. The `OpenPLC-SSH` connection was initiated successfully, opening an interactive SSH session to the OpenPLC machine (Ubuntu 16.04.4 LTS) directly from the web interface, with no additional client-side configuration.
 
 ![Active SSH session to OpenPLC via Guacamole](Screenshots/11.png)
+
 *Figure 11 — Active SSH session to OpenPLC via Guacamole*
 
 ---
