@@ -82,6 +82,7 @@ To let the Worker relay logs and cluster traffic to the Manager, pfSense rules w
 A `telnet`/`ping` test from the Worker toward the Manager on the cluster port confirms the link is functional end to end.
 
 ![Successful connectivity test from Worker to Manager](Screenshots/connect.png)
+
 *Figure — Successful `telnet 192.168.40.10 1516` from the Worker*
 
 ---
