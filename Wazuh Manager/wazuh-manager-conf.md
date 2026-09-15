@@ -21,6 +21,7 @@ The **Wazuh Manager** sits at **Level 4/5 (Enterprise Network)** of the Purdue m
 ## 2. Installation
 
 ![Wazuh Manager installation / version check](Screenshots/version.png)
+
 *Figure — Wazuh Manager installation and version check*
 
 ---
@@ -30,6 +31,7 @@ The **Wazuh Manager** sits at **Level 4/5 (Enterprise Network)** of the Purdue m
 The cluster block in `/var/ossec/etc/ossec.conf` defines this node as the **master** of the Wazuh cluster. The cluster `<key>` must be identical on every node (Manager and Worker) — it is what authenticates nodes to each other.
 
 ![ossec.conf cluster block — master node](Screenshots/cluster.png)
+
 *Figure — `/var/ossec/etc/ossec.conf`: cluster configuration (node_type: master)*
 
 **Table — Cluster parameters (Manager)**
@@ -48,9 +50,11 @@ The cluster block in `/var/ossec/etc/ossec.conf` defines this node as the **mast
 The Manager must be actively running and listening on the ports used for agent communication (1514), agent enrollment (1515), and cluster communication (1516).
 
 ![wazuh-manager service status](Screenshots/version.png)
+
 *Figure — `systemctl status wazuh-manager`*
 
-![Listening ports 1514/1515/1516](ports/version.png)
+![Listening ports 1514/1515/1516](Screenshots/ports.png)
+
 *Figure — `ss -tulnp` showing ports 1514, 1515, and 1516 in LISTEN state*
 
 ---
@@ -60,6 +64,7 @@ The Manager must be actively running and listening on the ports used for agent c
 Once the Worker node is configured and connected, `cluster_control -l` on the Manager lists every node in the cluster along with its role and version.
 
 ![cluster_control -l output](Screenshots/nodes.png)
+
 *Figure — `/var/ossec/bin/cluster_control -l`: master-node and worker-node both connected*
 
 ---
