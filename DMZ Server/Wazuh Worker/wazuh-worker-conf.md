@@ -54,7 +54,7 @@ The Worker must be running and listening on the same set of ports as the Manager
 
 *Figure — `systemctl status wazuh-manager` on the Worker*
 
-![Listening ports 1514/1515/1516 on the Worker](Screenshots/connect.png)
+![Listening ports 1514/1515/1516 on the Worker](Screenshots/ports.png)
 
 *Figure — `ss -tulnp` on the Worker showing ports 1514, 1515, and 1516 in LISTEN state*
 
@@ -64,7 +64,7 @@ The Worker must be running and listening on the same set of ports as the Manager
 
 To let the Worker relay logs and cluster traffic to the Manager, pfSense rules were added on the **DMZ** interface, authorizing traffic from the Worker's address (`192.168.35.10`) to the Manager (`192.168.40.10`) on the required ports.
 
-![pfSense DMZ rules for Worker → Manager traffic](config/wazuh-worker/rules.png)
+![pfSense DMZ rules for Worker → Manager traffic](Screenshots/rules.png)
 
 *Figure — pfSense: DMZ interface rules for ports 1514 (logs) and 1516 (cluster) toward the Manager*
 
@@ -81,7 +81,7 @@ To let the Worker relay logs and cluster traffic to the Manager, pfSense rules w
 
 A `telnet`/`ping` test from the Worker toward the Manager on the cluster port confirms the link is functional end to end.
 
-![Successful connectivity test from Worker to Manager](config/wazuh-worker/connectivity-test.png)
+![Successful connectivity test from Worker to Manager](Screenshots/connect.png)
 *Figure — Successful `telnet 192.168.40.10 1516` from the Worker*
 
 ---
