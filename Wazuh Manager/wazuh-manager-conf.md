@@ -67,6 +67,11 @@ Once the Worker node is configured and connected, `cluster_control -l` on the Ma
 
 *Figure — `/var/ossec/bin/cluster_control -l`: master-node and worker-node both connected*
 
+The same information is visible from the Wazuh Dashboard, under **Cluster → Nodes**.
+
+![Wazuh Dashboard — Cluster nodes list](Screenshots/Dashboard.png)
+*Figure — Wazuh Dashboard: Cluster nodes (master-node + worker-node)*
+
 ---
 
 ## 6. Notes
